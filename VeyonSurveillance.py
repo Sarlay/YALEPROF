@@ -4,7 +4,7 @@ from subprocess import Popen, PIPE
 from time import sleep
 import subprocess
 
-directory = "C:\\Users\\ELVE~1\\AppData\\Local\\Temp"
+directory = "C:\\Users\\votre nom de profil"\\AppData\\Local\\Temp"
 
 def write_temp_files():
     with open(f'{directory}\\YALEPROF.ps1', 'w+') as f:
