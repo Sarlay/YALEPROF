@@ -14,7 +14,7 @@ def write_temp_files():
     with open('C:\\Users\\ELVE~1\\AppData\\Local\\Temp\\popup.vbs', 'w+') as f:
         f.write('''
 
-        Sample = msgBox("YA LA PROF qui t'espionne" & vbCrLf & vbCrLf & "VOULEZ VOUS FUIR ????",16+32+4, "YA LE PROF !!!")
+        Sample = msgBox("Le professeur observe ton écran" & vbCrLf & vbCrLf & "VOULEZ VOUS FUIR ????",16+32+4, "YA LE PROF !!!")
         Select Case Sample
             Case 6
                 Dim objShell
@@ -24,7 +24,7 @@ def write_temp_files():
                 objShell.SendKeys "{F11}"
                 WScript.Quit
             Case 7
-                wScript.Echo "Ok mais le prof te surveille toujours"
+                wScript.Echo "Le professeur te surveille toujours"
         End Select''')
         f.close()
     with open('C:\\Users\\ELVE~1\\AppData\\Local\\Temp\\pasla.vbs', 'w+') as f:
@@ -44,13 +44,13 @@ while True:
         sleep(10)
         monitored = True # update state to monitored
     elif b"Established" in text and monitored is True:
-        print("toujours surveillé, prochaine update dans 10s")
+        print("Le professeur est toujours là, prochaine update dans 10s")
         sleep(10)
     elif b"Established" not in text and monitored is True:
         subprocess.call(['cscript.exe', f'{directory}\\pasla.vbs']) # popup teacher left
         monitored = False # update, teacher left
     elif b"Established" not in text and monitored is False:
-        print("Ya pas le prof trkl, update dans 5 secondes")
+        print("Pas de professeur, update dans 5 secondes")
         sleep(5)
 
 #'powershell.exe -ExecutionPolicy RemoteSigned -file "C:\Users\Elève\Documents\site\YALEPROF.ps1"', stdout=sys.stdout)
