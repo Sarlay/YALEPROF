@@ -4,7 +4,7 @@ from subprocess import Popen, PIPE
 from time import sleep
 import subprocess
 
-directory = "C:\\Users\\votre nom de profil"\\AppData\\Local\\Temp"
+directory = "C:\\Users\\votre nom de profil\\AppData\\Local\\Temp"
 
 def write_temp_files():
     with open(f'{directory}\\YALEPROF.ps1', 'w+') as f:
@@ -14,19 +14,15 @@ def write_temp_files():
     with open('C:\\Users\\ELVE~1\\AppData\\Local\\Temp\\popup.vbs', 'w+') as f:
         f.write('''
 
-        Sample = msgBox("Le professeur observe ton écran" & vbCrLf & vbCrLf & "VOULEZ VOUS FUIR ????",16+32+4, "YA LE PROF !!!")
-        Select Case Sample
-            Case 6
+
                 Dim objShell
                 Set objShell = CreateObject("WScript.Shell")
                 objShell.Run("""C:\Program Files\Google\Chrome\Application\chrome.exe"" ""https://classroom.google.com/c/NTQ1NTQ1NDg1MDYy""")
-                Wscript.Sleep 100
+
                 WScript.Quit
-            Case 7
-                wScript.Echo "Le professeur te surveille toujours"
-        End Select''')
+            ''')
         f.close()
-    with open('C:\\Users\\ELVE~1\\AppData\\Local\\Temp\\pasla.vbs', 'w+') as f:
+    with open('C:\\Users\\votre nom de profil\\AppData\\Local\\Temp\\pasla.vbs', 'w+') as f:
         f.write('''Sample = msgBox("LA PROF EST PARTI" & vbCrLf & vbCrLf & "Vous n'etes plus surveillé",0+64, "LE PROF EST PARTI !!!")''')
         f.close()
 
@@ -36,7 +32,7 @@ write_temp_files()
 
 monitored = False
 while True:
-    p = subprocess.Popen('powershell.exe -ExecutionPolicy RemoteSigned -file "C:\\Users\\ELVE~1\\AppData\\Local\\Temp\\YALEPROF.ps1"', stdout=PIPE)
+    p = subprocess.Popen('powershell.exe -ExecutionPolicy RemoteSigned -file "C:\\Users\\votre nom de profil\\AppData\\Local\\Temp\\YALEPROF.ps1"', stdout=PIPE)
     text = p.communicate()[0]
     if b"Established" in text and monitored is False: # teacher started to monitor you
         subprocess.call(['cscript.exe', f'{directory}\\popup.vbs'])
