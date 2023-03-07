@@ -19,7 +19,7 @@ def write_temp_files():
             Case 6
                 Dim objShell
                 Set objShell = CreateObject("WScript.Shell")
-                objShell.Run("""C:\Program Files (x86)\Google\Chrome\Application\chrome.exe"" ""https://taozhiyu.gitee.io/fake/win10ue/win10ue.html""")
+                objShell.Run("""C:\Program Files (x86)\Google\Chrome\Application\chrome.exe"" ""https://classroom.google.com/c/NTQ1NTQ1NDg1MDYy""")
                 Wscript.Sleep 100
                 objShell.SendKeys "{F11}"
                 WScript.Quit
